@@ -1,0 +1,51 @@
+Restaurant Management System
+
+# User:
+- id (Primary Key)   [int]
+- name   [str]
+- email  [email]
+- password [str]
+- phone  [str]
+- address   [str]
+- role(enum)   [str]
+
+# Category
+- id (Primary Key)   [int]
+- name   [str]
+
+# Food:
+- id (Primary Key)   [int]
+- name   [str]
+- price  [float/int]
+- category (Foreign Key, Category)   
+
+# Table
+- id  [int]
+- name   [str]
+- capacity(opt)   [int]
+- is_available    [Boolean]
+
+# Order
+- id    [int]
+- User (Foreign Key) [1 - m] (optional)
+- Food (Foreign Key) [m-m]
+- Table (Foreign Key) [1 - m] (optional)
+- Total price  [float/int]
+- status (Pending, In progress, Completed,..)   [str]
+- payment_status [Boolean]
+
+# OrderItem [Junction table]
+- id
+- order_id [FK - Order]
+- food_id [FK - Food]
+
+
+
+
+- virtual env
+- package instalation
+- project
+- app(rms)
+- github repo, connect with this project
+- .gitignore, .env, requirements.txt file
+- push in github repo
