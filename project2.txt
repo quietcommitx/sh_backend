@@ -28,7 +28,6 @@ Restaurant Management System
 # Order
 - id    [int]
 - User (Foreign Key) [1 - m] (optional)
-- Food (Foreign Key) [m-m]
 - Table (Foreign Key) [1 - m] (optional)
 - Total price  [float/int]
 - status (Pending, In progress, Completed,..)   [str]
