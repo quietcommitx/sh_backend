@@ -5,6 +5,9 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Category(models.Model):    # Drink
    name = models.CharField(max_length=50)
+   
+   def __str__(self):
+      return self.name
 
 
 class Food(models.Model):
@@ -36,6 +39,9 @@ class Order(models.Model):
    table = models.ForeignKey(Table, on_delete=models.CASCADE, null=True, blank=True)
    status = models.CharField(max_length=2, choices=STATUS_CHOICES, default = PENDING)
    payment_status = models.BooleanField()
+   
+   def __str__(self):
+      return f"{self.user} | Table {self.table}: {self.status}"
 
 
 class OrderItem(models.Model):
