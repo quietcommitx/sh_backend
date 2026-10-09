@@ -20,6 +20,9 @@ class Table(models.Model):
    name = models.CharField(max_length=50)
    capacity = models.IntegerField(null=True)
    is_available = models.BooleanField(default=True)
+   
+   def __str__(self):
+      return f"Table no. {self.name}"
 
 
 class Order(models.Model):
