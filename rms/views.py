@@ -6,13 +6,63 @@ from .serializer import CategorySerializer
 # Create your views here.
 
 # class based 
-# Generic
-from rest_framework.generics import GenericAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from rest_framework import mixins
-
-class CategoryGenericAPIView(ListCreateAPIView):
+# modelviewset
+from rest_framework.viewsets import ModelViewSet
+class CategoryModelViewSet(ModelViewSet):
    queryset = Category.objects.all()
    serializer_class = CategorySerializer
+
+
+# Viewset
+# from rest_framework import viewsets
+# class CategoryViewSet(viewsets.ViewSet):
+#    def list(self, request):
+#       queryset = Category.objects.all()
+#       serializer = CategorySerializer(queryset, many=True)     # serialize/ serializtion: convert qureyset/model instance/objects into json format 
+#       return Response(serializer.data)
+   
+#    def create(self, request):
+#       serializer = CategorySerializer(data = request.data)   # deserialization: covent json into model instance
+#       serializer.is_valid(raise_exception=True)
+#       serializer.save()
+#       return Response(serializer.data)
+
+# class CategoryDetailGenericAPIView(viewsets.ViewSet):
+#    def retrieve(self, request, pk):
+#       queryset = Category.objects.get(pk=pk)
+#       serializer = CategorySerializer(queryset, many=True)     # serialize/ serializtion: convert qureyset/model instance/objects into json format 
+#       return Response(serializer.data)
+   
+#    def update(self, request,pk):
+#       queryset = Category.objects.get(pk=pk)
+#       serializer = CategorySerializer(queryset, data=request.data, partial=True)
+#       serializer.is_valid(raise_exception=True)
+#       serializer.save()
+#       return Response(serializer.data)
+   
+#    def partial_update(self, request, pk=None):
+#       queryset = Category.objects.get(pk=pk)
+#       serializer = CategorySerializer(queryset, data=request.data, partial=True)
+#       serializer.is_valid(raise_exception=True)
+#       serializer.save()
+#       return Response(serializer.data)
+   
+#    def destroy(self, request, pk=None):
+#       queryset = Category.objects.get(pk=pk)
+#       items = OrderItem.objects.filter(food__category=queryset).count()
+#       if items >= 1:
+#          return Response({"detail":"Can not be deleted. The category is connected to the food in OrderItem"})
+#       queryset.delete()
+#       return Response({"message":"Category deleted successfully!"})
+
+
+# Generic
+# from rest_framework.generics import GenericAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
+# from rest_framework import mixins
+
+# class CategoryGenericAPIView(ListCreateAPIView):
+#    queryset = Category.objects.all()
+#    serializer_class = CategorySerializer
    
    # def get(self, request):
    #    return self.list(request)
@@ -31,9 +81,9 @@ class CategoryGenericAPIView(ListCreateAPIView):
    #    serializer.save()
    #    return Response(serializer.data)
 
-class CategoryDetailGenericAPIView(GenericAPIView, RetrieveUpdateDestroyAPIView):
-   queryset = Category.objects.all()
-   serializer_class = CategorySerializer
+# class CategoryDetailGenericAPIView(GenericAPIView, RetrieveUpdateDestroyAPIView):
+#    queryset = Category.objects.all()
+#    serializer_class = CategorySerializer
    
    # def get(self, request, *args, **kwargs):
    #    return self.retrieve(request, *args, **kwargs)
@@ -44,12 +94,12 @@ class CategoryDetailGenericAPIView(GenericAPIView, RetrieveUpdateDestroyAPIView)
    # def patch(self, request, *args, **kwargs):
    #    return self.partial_update(request, *args, **kwargs)
    
-   def delete(self, request, *args, **kwargs):
-      instance = self.get_object()
-      items = OrderItem.objects.filter(food__category=instance).count()
-      if items >= 1:
-         return Response({"detail":"Can not be deleted. The category is connected to the food in OrderItem"})
-      return self.destroy(request, *args, **kwargs)
+   # def delete(self, request, *args, **kwargs):
+   #    instance = self.get_object()
+   #    items = OrderItem.objects.filter(food__category=instance).count()
+   #    if items >= 1:
+   #       return Response({"detail":"Can not be deleted. The category is connected to the food in OrderItem"})
+   #    return self.destroy(request, *args, **kwargs)
 
 
 
