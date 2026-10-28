@@ -4,6 +4,7 @@ from rest_framework import routers
 
 router = routers.SimpleRouter()
 router.register(r'category', CategoryModelViewSet, basename='category')
+router.register(r'food', FoodModelViewSet, basename='food')
 
 urlpatterns = [
    # path('welcome/', welcome)

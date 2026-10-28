@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category
+from .models import Category, Food
 
 class CategorySerializer(serializers.ModelSerializer):
    class Meta:
@@ -10,6 +10,24 @@ class CategorySerializer(serializers.ModelSerializer):
    
    # def create(self, validated_data):
    #    return Category.objects.create(**validated_data)
+
+
+class FoodSerializer(serializers.ModelSerializer):
+   price_with_tax = serializers.SerializerMethodField()
+   # category = serializers.StringRelatedField()
+   # category_id = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all(), source='category')
+   category = CategorySerializer()
+   class Meta:
+      model = Food
+      fields = ['id','name', 'price', 'price_with_tax','category']
+
+   def get_price_with_tax(self,obj):
+      return obj.price + obj.price * 0.11
+
+   # price with 10% discount
+
+
+
 
 
 # class CategorySerializer(serializers.Serializer):

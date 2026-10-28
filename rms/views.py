@@ -2,15 +2,32 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import *
-from .serializer import CategorySerializer
+from .serializer import CategorySerializer, FoodSerializer
+from rest_framework.pagination import PageNumberPagination
 # Create your views here.
 
 # class based 
 # modelviewset
 from rest_framework.viewsets import ModelViewSet
+from .pagination import CategoryPagination
+
+
 class CategoryModelViewSet(ModelViewSet):
    queryset = Category.objects.all()
    serializer_class = CategorySerializer
+   pagination_class = CategoryPagination
+
+class FoodModelViewSet(ModelViewSet):
+   queryset = Food.objects.all()
+   serializer_class = FoodSerializer
+   pagination_class = PageNumberPagination
+
+
+
+
+
+
+
 
 
 # Viewset
