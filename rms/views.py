@@ -4,14 +4,15 @@ from rest_framework.decorators import api_view
 from .models import *
 from .serializer import CategorySerializer, FoodSerializer
 from rest_framework.pagination import PageNumberPagination
+from rest_framework import filters
 # Create your views here.
 
 # class based 
 # modelviewset
 from rest_framework.viewsets import ModelViewSet
 from .pagination import CategoryPagination
-
-
+from django_filters.rest_framework import DjangoFilterBackend
+from .filters import FoodFilter
 class CategoryModelViewSet(ModelViewSet):
    queryset = Category.objects.all()
    serializer_class = CategorySerializer
@@ -21,6 +22,10 @@ class FoodModelViewSet(ModelViewSet):
    queryset = Food.objects.all()
    serializer_class = FoodSerializer
    pagination_class = PageNumberPagination
+   filter_backends = [filters.SearchFilter, DjangoFilterBackend]
+   search_fields = ['name']
+   # filterset_fields = ['category__name','price']
+   filterset_class = FoodFilter
 
 
 
