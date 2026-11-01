@@ -14,12 +14,12 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class FoodSerializer(serializers.ModelSerializer):
    price_with_tax = serializers.SerializerMethodField()
-   # category = serializers.StringRelatedField()
-   # category_id = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all(), source='category')
-   category = CategorySerializer()
+   category = serializers.StringRelatedField(read_only=True)
+   category_id = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all(), source='category')
+   # category = CategorySerializer()
    class Meta:
       model = Food
-      fields = ['id','name', 'price', 'price_with_tax','category']
+      fields = ['id','name', 'price', 'price_with_tax','category','category_id']
 
    def get_price_with_tax(self,obj):
       return obj.price + obj.price * 0.11

@@ -5,6 +5,8 @@ from .models import *
 from .serializer import CategorySerializer, FoodSerializer
 from rest_framework.pagination import PageNumberPagination
 from rest_framework import filters
+from rest_framework.permissions import IsAuthenticated
+from .permissions import IsAuthenticatedOrReadOnly
 # Create your views here.
 
 # class based 
@@ -17,6 +19,9 @@ class CategoryModelViewSet(ModelViewSet):
    queryset = Category.objects.all()
    serializer_class = CategorySerializer
    pagination_class = CategoryPagination
+   permission_classes = [IsAuthenticatedOrReadOnly]
+
+
 
 class FoodModelViewSet(ModelViewSet):
    queryset = Food.objects.all()
@@ -26,6 +31,7 @@ class FoodModelViewSet(ModelViewSet):
    search_fields = ['name']
    # filterset_fields = ['category__name','price']
    filterset_class = FoodFilter
+   permission_classes = [IsAuthenticated]
 
 
 

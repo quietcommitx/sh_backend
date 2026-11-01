@@ -1,0 +1,324 @@
+[
+   {
+      "model": "rms.category",
+      "pk": 3,
+      "fields": {
+         "name": "Snacks"
+      }
+   },
+   {
+      "model": "rms.category",
+      "pk": 4,
+      "fields": {
+         "name": "Bakery"
+      }
+   },
+   {
+      "model": "rms.category",
+      "pk": 5,
+      "fields": {
+         "name": "Condiments"
+      }
+   },
+   {
+      "model": "rms.category",
+      "pk": 6,
+      "fields": {
+         "name": "Snacks"
+      }
+   },
+   {
+      "model": "rms.category",
+      "pk": 7,
+      "fields": {
+         "name": "Sauces"
+      }
+   },
+   {
+      "model": "rms.category",
+      "pk": 8,
+      "fields": {
+         "name": "Food - Seafood"
+      }
+   },
+   {
+      "model": "rms.category",
+      "pk": 9,
+      "fields": {
+         "name": "Home"
+      }
+   },
+   {
+      "model": "rms.category",
+      "pk": 10,
+      "fields": {
+         "name": "Food - Baking"
+      }
+   },
+   {
+      "model": "rms.category",
+      "pk": 11,
+      "fields": {
+         "name": "Food - Dairy Alternatives"
+      }
+   },
+   {
+      "model": "rms.category",
+      "pk": 12,
+      "fields": {
+         "name": "Kitchen"
+      }
+   },
+   {
+      "model": "rms.category",
+      "pk": 13,
+      "fields": {
+         "name": "Food - Prepared Foods"
+      }
+   },
+   {
+      "model": "rms.category",
+      "pk": 14,
+      "fields": {
+         "name": "Office"
+      }
+   },
+   {
+      "model": "rms.category",
+      "pk": 15,
+      "fields": {
+         "name": "category1"
+      }
+   },
+   {
+      "model": "rms.category",
+      "pk": 17,
+      "fields": {
+         "name": "postman"
+      }
+   },
+   {
+      "model": "rms.food",
+      "pk": 2,
+      "fields": {
+         "name": "Apple Sauce",
+         "price": 279,
+         "category": 5
+      }
+   },
+   {
+      "model": "rms.food",
+      "pk": 3,
+      "fields": {
+         "name": "Mechanical Keyboard",
+         "price": 116,
+         "category": 7
+      }
+   },
+   {
+      "model": "rms.food",
+      "pk": 4,
+      "fields": {
+         "name": "Frozen Salmon Filets",
+         "price": 226,
+         "category": 6
+      }
+   },
+   {
+      "model": "rms.food",
+      "pk": 5,
+      "fields": {
+         "name": "Screen Cleaning Kit",
+         "price": 554,
+         "category": 5
+      }
+   },
+   {
+      "model": "rms.food",
+      "pk": 6,
+      "fields": {
+         "name": "High-Speed Blender",
+         "price": 690,
+         "category": 5
+      }
+   },
+   {
+      "model": "rms.food",
+      "pk": 7,
+      "fields": {
+         "name": "Roasted Red Pepper Sauce",
+         "price": 170,
+         "category": 6
+      }
+   },
+   {
+      "model": "rms.food",
+      "pk": 8,
+      "fields": {
+         "name": "Portable Air Pump",
+         "price": 634,
+         "category": 14
+      }
+   },
+   {
+      "model": "rms.food",
+      "pk": 9,
+      "fields": {
+         "name": "Tea Infuser Bottle",
+         "price": 583,
+         "category": 9
+      }
+   },
+   {
+      "model": "rms.food",
+      "pk": 11,
+      "fields": {
+         "name": "Laptop Backpack",
+         "price": 215,
+         "category": 4
+      }
+   },
+   {
+      "model": "rms.food",
+      "pk": 12,
+      "fields": {
+         "name": "Pet Reflective Vest",
+         "price": 226,
+         "category": 7
+      }
+   },
+   {
+      "model": "rms.food",
+      "pk": 13,
+      "fields": {
+         "name": "Rice Pilaf Mix",
+         "price": 193,
+         "category": 5
+      }
+   },
+   {
+      "model": "rms.food",
+      "pk": 14,
+      "fields": {
+         "name": "Balsamic Fig Dressing",
+         "price": 100,
+         "category": 10
+      }
+   },
+   {
+      "model": "rms.food",
+      "pk": 15,
+      "fields": {
+         "name": "Caramel Apple Chips",
+         "price": 478,
+         "category": 3
+      }
+   },
+   {
+      "model": "rms.food",
+      "pk": 17,
+      "fields": {
+         "name": "addin food",
+         "price": 100,
+         "category": 3
+      }
+   },
+   {
+      "model": "rms.food",
+      "pk": 18,
+      "fields": {
+         "name": "postman food",
+         "price": 500,
+         "category": 7
+      }
+   },
+   {
+      "model": "rms.table",
+      "pk": 1,
+      "fields": {
+         "name": "1",
+         "capacity": 6,
+         "is_available": true
+      }
+   },
+   {
+      "model": "rms.table",
+      "pk": 2,
+      "fields": {
+         "name": "2",
+         "capacity": 4,
+         "is_available": false
+      }
+   },
+   {
+      "model": "rms.table",
+      "pk": 3,
+      "fields": {
+         "name": "3",
+         "capacity": 2,
+         "is_available": false
+      }
+   },
+   {
+      "model": "rms.table",
+      "pk": 4,
+      "fields": {
+         "name": "4",
+         "capacity": 2,
+         "is_available": false
+      }
+   },
+   {
+      "model": "rms.table",
+      "pk": 5,
+      "fields": {
+         "name": "5",
+         "capacity": 3,
+         "is_available": false
+      }
+   },
+   {
+      "model": "rms.table",
+      "pk": 6,
+      "fields": {
+         "name": "6",
+         "capacity": 2,
+         "is_available": false
+      }
+   },
+   {
+      "model": "rms.table",
+      "pk": 7,
+      "fields": {
+         "name": "7",
+         "capacity": 2,
+         "is_available": false
+      }
+   },
+   {
+      "model": "rms.order",
+      "pk": 1,
+      "fields": {
+         "user": 1,
+         "table": null,
+         "status": "P",
+         "payment_status": false
+      }
+   },
+   {
+      "model": "rms.orderitem",
+      "pk": 1,
+      "fields": {
+         "order": 1,
+         "food": 11
+      }
+   },
+   {
+      "model": "rms.orderitem",
+      "pk": 2,
+      "fields": {
+         "order": 1,
+         "food": 7
+      }
+   }
+]
